@@ -168,12 +168,17 @@ section:not(.hero-bild) {
     transform: scale(1.03)translateX(5px);
 }
 /* ------------------ HOME-USER-REZENSION ------------------ */
+#rezension {
+    background: rgba(3, 102, 229, 0.8);
+}
 .rezensionen-container {
     display: flex;
     justify-content: space-evenly;
     padding: 2rem 0 4rem 0;
-    background: rgba(3, 102, 229, 0.8);
     color: white;
+    max-width: 1650px;
+    width: 90%;
+    margin: 0 auto;
 }
 .rezension {
     display: flex;
