@@ -94,9 +94,6 @@ nav ul li:hover .dropdown-nav {
     display: block;
     padding: 1rem 0;
 }
-.seconddrop {
-    display: none;
-}
 /* ------------------ HOME-TITELBILD ------------------ */
 #titelbild {
     width: 100%;
@@ -347,6 +344,11 @@ footer h3 {
         flex-direction: column;
         align-items: center;
         gap: 4rem;
+    }
+}
+@media (min-width: 1101px) {
+    .seconddrop, .secondcancel {
+        display: none;
     }
 }
 /* START MOBILE NAV */

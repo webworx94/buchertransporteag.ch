@@ -4,6 +4,7 @@ const header = document.getElementById('header');
 const dropdownNav = document.querySelector('.dropdown-nav');
 const dropBtn = document.querySelector('.seconddrop');
 const dropStopBtn = document.querySelector('.secondcancel');
+const bothDropBtn = document.querySelector('.dropbtn')
 let isMenuOpen = false;
 
 // Menu-Button Eventlistener
@@ -23,7 +24,7 @@ cancelBtn.addEventListener('click', function () {
 
     // Reset dropdown state
     dropdownNav.style.opacity = '0'; // Hide dropdown
-    dropBtn.style.display = 'inline-block'; // Show dropdown button
+    dropBtn.style.display = 'none'; // Show dropdown button
     dropStopBtn.style.display = 'none'; // Hide cancel button for dropdown
 });
 
@@ -50,12 +51,12 @@ window.addEventListener('resize', function () {
         cancelBtn.style.display = 'none';
         menuBtn.style.display = 'none';
         header.style.top = '0';
+        bothDropBtn.style.display = 'none';
         isMenuOpen = false;
 
         // Ensure dropdown is reset
-        dropdownNav.style.opacity = '0'; // Hide dropdown
-        dropBtn.style.display = 'inline-block'; // Show dropdown button
-        dropStopBtn.style.display = 'none'; // Hide cancel button for dropdown
+        dropdownNav.style.opacity = '1.0'; // Hide dropdown
+        
     } else {
         // Reset menu buttons and header for small screens if menu is closed
         if (!isMenuOpen) {
