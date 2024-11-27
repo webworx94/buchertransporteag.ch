@@ -65,6 +65,7 @@
         <section class="hero-bild">
             <div id="titelbild2" role="img" aria-label="Lastwagen mit Kippmulden auf einem Sammelplatz der Bucher Transport AG">
                 <h1>MULDENSERVICE</h1>
+                <div class="kleinzeil"></div>
                 <h2>VERSCHIEDENSTE MULDEN FÜR JEGLICHE ENTSORGUNGEN</h2>
             </div>
         </section>
@@ -161,7 +162,7 @@
 
         <section>
             <div class="middler">
-                <p><b>Folgende Materialien können entsorgt werden:</b></p>
+                <p><b>Geeignet für folgende Materialien:</b></p>
                 <div class="kleinzeil"></div>
                 <p>Aushub, Alteisen, Altpapier, Altholz, Bauglas, Bauschutt (gemischt),
                     Ausbauasphalt, Betonresten, Erde, Grünabfälle, Humus, Kies, Mauerwerk,
@@ -170,9 +171,80 @@
             </div>
         </section>
 
-        <form>
-            
-        </form>
+        <section id="anfrage">
+            <h4>ANFRAGE SENDEN</h4>
+            <form action="https://web-worx.ch/formulare/bucher_process_form.php" method="post" class="contact-form" onsubmit="return handleFormSubmit()">
+                
+                <input type="hidden" name="form_id" value="190120241901">    
+                <div class="form-row">
+                    <label for="name">Name:<span> *</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="adresse">Adresse:<span> *</span></label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="ort">PLZ/Ort:<span> *</span></label>
+                    <input type="text" id="ort" name="ort" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="tel">Tel./Mobil:<span> *</span></label>
+                    <input type="tel" id="tel" name="tel" pattern="[0-9]*" inputmode="numeric" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">E-Mail:<span> *</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="mulde">Mulde/Container: <span>*</span></label>
+                    <select id="mulde" name="mulde" required>
+                        <option value="" selected disabled>Bitte auswählen</option>
+                        <option value="4m3-Mulde">4m<sup>3</sup> Mulde</option>
+                        <option value="7m3-Mulde">7m<sup>3</sup> Mulde</option>
+                        <option value="10m3-Mulde">10m<sup>3</sup> Mulde</option>
+                        <option value="20m3-Mulde">20m<sup>3</sup> Mulde</option>
+                        <option value="25m3-Mulde">25m<sup>3</sup> Mulde</option>
+                        <option value="40m3-Mulde">40m<sup>3</sup> Mulde</option>
+                        <option value="7m3-Flachmulde">7m<sup>3</sup> Flachmulde</option>
+                        <option value="10m3-Flachmulde">10m<sup>3</sup> Flachmulde</option>
+                        <option value="14m3-Flachmulde">14m<sup>3</sup> Flachmulde</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="material">Material: <span>*</span></label>
+                    <select id="material" name="material" required>
+                        <option value="" selected disabled>Bitte auswählen</option>
+                        <option value="Sperrgut">Sperrgut/KVA (brennbare Abfälle)</option>
+                        <option value="Altholz">Altholz</option>
+                        <option value="Bauschutt">Bauschutt/innerte Stoffe</option>
+                        <option value="Sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <label for="message">Nachricht:</label>
+                    <textarea name="message" id="message" rows="5" cols="30">
+                    </textarea>
+                </div>
+
+                <div class="form-row2">
+                    <input type="checkbox" id="data-consent" required>
+                    <label for="data-consent">
+                        Ich bin mit der Verarbeitung meiner Personendaten gemäss 
+                        <a href="../datenschutz/" class="privacy-link">Datenschutz</a> einverstanden.<span> *</span>
+                    </label>
+                </div>
+                
+                <input type="submit">
+            </form>
+        </section>
     </main>
 
     <!--------------------------FOOTER-------------------------->

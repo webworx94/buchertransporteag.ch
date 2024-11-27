@@ -73,3 +73,11 @@ window.addEventListener('resize', function () {
         }
     }
 });
+
+
+// Nur NR annehmen im Formular Telefonnummer
+const telInput = document.getElementById('tel')
+
+telInput.addEventListener('input', () => {
+    telInput.value = telInput.value.replace(/[^0-9]/g, '');
+})
