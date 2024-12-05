@@ -81,3 +81,8 @@ const telInput = document.getElementById('tel')
 telInput.addEventListener('input', () => {
     telInput.value = telInput.value.replace(/[^0-9]/g, '');
 })
+
+
+// GALLERIE
+
+
