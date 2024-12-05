@@ -530,13 +530,24 @@ top: -100vh; left: -100vh;
     width: 100%;
     margin-bottom: -0.31rem;
 }
+.img-container {
+    max-width: 300px;
+    margin: 0 auto 2rem auto;
+}
+.img-container img {
+    width: 100%;
+    transition: 0.5s;
+}
+.img-container img:hover {
+    transform: scale(1.08);
+}
 .video-container {
     position: relative;
     padding-bottom: 40.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
     max-width: 70%;
-    margin: 0 auto;
+    margin: 0 auto 4rem auto;
     background: #000;
 }
 .video-container iframe {
@@ -547,9 +558,6 @@ top: -100vh; left: -100vh;
     height: 100%;
     border: none;
 }
-
-
-
 /*---------------------FOOTER---------------------*/
 footer {
     width: 100%;
