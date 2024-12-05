@@ -65,6 +65,10 @@ nav ul li a:hover {
     color: gold;
     text-decoration: underline;
 }
+.active-link,
+.dropdown-nav li a.active-link {
+    color: gold;
+}
 .dropdown-toggle:hover .dropdown-nav {
     display: block;
 }
@@ -184,11 +188,16 @@ section:not(.hero-bild,
 #rezension {
     position: relative;
     width: 100%;
-    background: url(media/test2.jpg);
     background-size: cover;
     background-position: 50% 50%;
     z-index: 1;
     /*background: rgba(3, 102, 229, 0.8);*/
+}
+.rezension1 {
+    background: url(media/test2.jpg);
+}
+.rezension2 {
+    background: url(media/sammelstelle2.jpeg);
 }
 #rezension::before {
     content: '';
@@ -251,6 +260,7 @@ h2 {
     position: relative;
     width: 100%;
     height: 70svh;
+    min-height: 600px;
     background: url(media/muldenservice2.jpeg);
     background-size: cover;
     background-position: 60% 50%;
@@ -260,7 +270,11 @@ h2 {
     align-items: center;
     flex-direction: column;
 }
-#titelbild2::before {
+#titelbild2::before,
+#titelbild3::before,
+#titelbild4::before,
+#titelbild5::before,
+#titelbild6::before {
     content: '';
     position: absolute;
     top: 0;
@@ -424,6 +438,7 @@ textarea {
     position: relative;
     width: 100%;
     height: 70svh;
+    min-height: 600px;
     background: url(media/Sammelstelle.jpg);
     background-size: cover;
     background-position: 60% 70%;
@@ -432,16 +447,6 @@ textarea {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-#titelbild3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
 }
 /* AKKORDEON */
 #accordion .h2er {
@@ -453,7 +458,7 @@ textarea {
     max-width: 900px;
     text-align: left;
     margin: 3rem 0;
-  }
+}
 .article-h2 {
     color: #194B8A;
     font-size: 1.6rem;
@@ -487,7 +492,7 @@ top: -100vh; left: -100vh;
 }
 
 &:checked ~ div {
-    max-height: 700px;
+    max-height: 900px;
 }
 }
 #abholservice {
@@ -505,6 +510,10 @@ top: -100vh; left: -100vh;
 .inner-abholservice h3 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
+}
+.link-box {
+    display: flex;
+    gap: 2rem;
 }
 .inner-abholservice a {
     color: white;
@@ -538,6 +547,7 @@ top: -100vh; left: -100vh;
 .img-container img {
     width: 100%;
     transition: 0.5s;
+    border-radius: 50%;
 }
 .img-container img:hover {
     transform: scale(1.08);
@@ -558,6 +568,57 @@ top: -100vh; left: -100vh;
     width: 100%;
     height: 100%;
     border: none;
+}
+/* ------------------ KIPPEREI & ASPHALT-TRANSPORTE ------------------ */
+#titelbild4 {
+    position: relative;
+    width: 100%;
+    height: 70svh;
+    min-height: 600px;
+    background: url(media/Kipper-Transporte.JPG);
+    background-size: cover;
+    background-position: 60% 65%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* ------------------ OFFENE STELLEN ------------------ */
+#titelbild5 {
+    position: relative;
+    width: 100%;
+    height: 70svh;
+    min-height: 600px;
+    background: url(media/jobs.jpg);
+    background-size: cover;
+    background-position: 60% 20%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.keine-jobs {
+    padding: 6rem 0;
+}
+.jobs {
+    padding: 2rem 0;
+}
+/* ------------------ Geschichte ------------------ */
+#titelbild6 {
+    position: relative;
+    width: 100%;
+    height: 70svh;
+    min-height: 600px;
+    background: url(media/geschichte.jpeg);
+    background-size: cover;
+    background-position: 60% 20%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 /*---------------------FOOTER---------------------*/
 footer {
@@ -654,6 +715,9 @@ footer h3 {
 }
 .kleinzeil {
     margin: 0.4rem;
+}
+.kleinzeil2 {
+    margin: 1rem 0;
 }
 /* MEDIA QUERYS */
 @media (max-width: 1650px) {
@@ -909,6 +973,13 @@ footer h3 {
     }
     input, textarea, select {
         width: 350px;
+    }
+    #accordion .h2er {
+        font-size: 2.3rem;
+    }
+    .accordion {
+        max-width: 500px;
+        margin: 2rem 0;
     }
 }
 @media (max-width: 450px) {
