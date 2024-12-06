@@ -592,13 +592,13 @@ top: -100vh; left: -100vh;
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .gallery-item {
     position: relative;
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 1 / 1; /* Setzt das Verhältnis der Bilder auf 1:1 */
+    aspect-ratio: 1.7 / 1; /* Setzt das Verhältnis der Bilder auf 1:1 */
 }
 .gallery-item img {
     width: 100%;
@@ -607,6 +607,9 @@ top: -100vh; left: -100vh;
     display: block;
     cursor: pointer;
     transition: box-shadow 0.15s ease-in-out; /* Beibehaltung der bestehenden Übergangseffekte */
+}
+.tall {
+    grid-row: span 2;
 }
 .overlay {
     display: none;
@@ -685,7 +688,7 @@ top: -100vh; left: -100vh;
 .jobs {
     padding: 2rem 0;
 }
-/* ------------------ Geschichte ------------------ */
+/* ------------------ GESCHICHTE ------------------ */
 #titelbild6 {
     position: relative;
     width: 100%;
@@ -699,6 +702,18 @@ top: -100vh; left: -100vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+/* ------------------ IMPRESSUM ------------------ */
+#titelbild10 {
+    width: 100%;
+    height: 40svh;
+    background-image: url(media/lastwagen-front.JPG);
+    background-size: cover;
+    background-position: 40% 0%;
+}
+#impressum h1, 
+#impressum h2 {
+    color: black;
 }
 /*---------------------FOOTER---------------------*/
 footer {
@@ -945,6 +960,7 @@ footer h3 {
     .inner-abholservice {
         flex-direction: column;
         padding-top: 5rem;
+        width: 90%;
     }
     
     .abholservice-img {
@@ -1086,5 +1102,11 @@ footer h3 {
     }
     .mat-item {
         height: 120px;
+    }
+    .link-box {
+        gap: 1rem;
+    }
+    .img-container {
+        max-width: 250px;
     }
 }
