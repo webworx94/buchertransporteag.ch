@@ -74,15 +74,96 @@ window.addEventListener('resize', function () {
     }
 });
 
-
 // Nur NR annehmen im Formular Telefonnummer
-const telInput = document.getElementById('tel')
-
-telInput.addEventListener('input', () => {
-    telInput.value = telInput.value.replace(/[^0-9]/g, '');
-})
-
+const telInput = document.getElementById('tel');
+if (telInput) { // Prüfen, ob das Element existiert
+    console.log("Input-Feld für Telefonnummer gefunden, Event-Listener wird hinzugefügt.");
+    telInput.addEventListener('input', () => {
+        telInput.value = telInput.value.replace(/[^0-9]/g, '');
+        console.log("Eingabe gefiltert, aktueller Wert:", telInput.value);
+    });
+} else {
+    console.log("Kein Input-Feld für Telefonnummer auf dieser Seite vorhanden.");
+};
 
 // GALLERIE
+document.addEventListener("DOMContentLoaded", () => {
+    // Überprüfen, ob das Element #gallery vorhanden ist
+    const gallery = document.getElementById("gallerie");
+    if (!gallery) {
+        console.log("Keine Galerie auf dieser Seite vorhanden.");
+        return; // Skript wird beendet, wenn #gallery nicht existiert
+    }
 
+    // Alle wichtigen Elemente auswählen
+    const galleryItems = document.querySelectorAll(".gallery-item img");
+    const overlay = document.getElementById("overlay");
+    const overlayImage = document.getElementById("overlay-image");
+    const closeBtn = document.getElementById("close-btn");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
 
+    let currentIndex = 0; // Index des aktuellen Bildes
+
+    // Funktion, um das Overlay zu öffnen
+    const openOverlay = (index) => {
+        currentIndex = index;
+        const imgSrc = galleryItems[currentIndex].getAttribute("src");
+        overlayImage.setAttribute("src", imgSrc);
+        overlay.style.display = "flex";
+        requestAnimationFrame(() => overlay.classList.add("show"));
+    };
+
+    // Funktion, um das Overlay zu schließen
+    const closeOverlay = () => {
+        overlay.classList.remove("show");
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 500); // Animation abwarten (CSS Transition-Dauer)
+    };
+
+    // Funktion, um zum vorherigen Bild zu wechseln
+    const showPrevImage = () => {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        const imgSrc = galleryItems[currentIndex].getAttribute("src");
+        overlayImage.setAttribute("src", imgSrc);
+    };
+
+    // Funktion, um zum nächsten Bild zu wechseln
+    const showNextImage = () => {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        const imgSrc = galleryItems[currentIndex].getAttribute("src");
+        overlayImage.setAttribute("src", imgSrc);
+    };
+
+    // Event Listener für die Bilder in der Galerie
+    galleryItems.forEach((img, index) => {
+        img.addEventListener("click", () => openOverlay(index));
+    });
+
+    // Event Listener für die Buttons im Overlay
+    closeBtn.addEventListener("click", closeOverlay);
+    prevBtn.addEventListener("click", showPrevImage);
+    nextBtn.addEventListener("click", showNextImage);
+
+    // Overlay schließen, wenn man außerhalb des Bildes klickt
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) closeOverlay();
+    });
+
+    // Event Listener für die Tastatur
+    document.addEventListener("keydown", (event) => {
+        if (!overlay.classList.contains("show")) return;
+        switch (event.key) {
+            case "ArrowLeft":
+                showPrevImage();
+                break;
+            case "ArrowRight":
+                showNextImage();
+                break;
+            case "Escape":
+                closeOverlay();
+                break;
+        }
+    });
+});
