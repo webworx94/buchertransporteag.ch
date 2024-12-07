@@ -21,6 +21,7 @@ body p {
     --bg-grey: #202020;
     --text-color: white;
 }
+
 /* ------------------ NAVIGATION ------------------ */
 .nav-btn {
     display: none;
@@ -692,7 +693,7 @@ top: -100vh; left: -100vh;
 #titelbild6 {
     position: relative;
     width: 100%;
-    height: 70svh;
+    height: 50svh;
     min-height: 600px;
     background: url(media/geschichte.jpeg);
     background-size: cover;
@@ -703,6 +704,203 @@ top: -100vh; left: -100vh;
     align-items: center;
     flex-direction: column;
 }
+.timeline ul {
+    padding: 50px 0;
+}
+
+.timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: rgba(3, 102, 229, 0.9);
+    color: white;
+}
+
+.timeline ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 600px; /* Breite angepasst */
+    padding: 15px;
+    background: rgba(3, 102, 229, 0.9);
+}
+
+.timeline ul li div img {
+    max-width: 100%; /* Bild passt sich der Breite an */
+    height: auto; /* Verhältnis bleibt erhalten */
+    display: block; /* Vermeidet Inline-Abstände */
+    margin: 1rem auto; /* Bild zentrieren */
+}
+
+.timeline ul li div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #000000 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+    left: -639px; /* Anpassung für 600px Breite */
+}
+
+.timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #000000;
+}
+
+time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+    background: #000000;
+}
+
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div {
+        width: 450px; /* Breite für mittlere Bildschirme */
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -489px; /* Anpassung für 450px Breite */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+    .timeline ul li div {
+        width: calc(100vw - 91px); /* Dynamische Breite für kleinere Bildschirme */
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 45px; /* Gleiche Position wie bei ungeraden Elementen */
+    }
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #000 transparent transparent;
+    }
+}
+
+/* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.timeline-rhombus ul li div::before {
+    bottom: 12px;
+}
+
+.timeline-star ul li::after {
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+}
+
+.timeline-heptagon ul li::after {
+    clip-path: polygon(
+        50% 0%,
+        90% 20%,
+        100% 60%,
+        75% 100%,
+        25% 100%,
+        0% 60%,
+        10% 20%
+    );
+}
+
+.timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
 /* ------------------ IMPRESSUM ------------------ */
 #titelbild10 {
     width: 100%;
@@ -721,6 +919,10 @@ top: -100vh; left: -100vh;
 #impressum h2 {
     font-size: 2.7rem; 
     margin: 3rem 0 1.5rem 0; 
+}
+#impressum h3 {
+    font-size: 1.8rem;
+    margin: 2rem 0 0.5rem 0;
 }
 #impressum address {
     font-style: normal;
