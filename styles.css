@@ -706,7 +706,7 @@ top: -100vh; left: -100vh;
 /* ------------------ IMPRESSUM ------------------ */
 #titelbild10 {
     width: 100%;
-    height: 40svh;
+    height: 50svh;
     background-image: url(media/lastwagen-front.JPG);
     background-size: cover;
     background-position: 40% 0%;
@@ -714,6 +714,33 @@ top: -100vh; left: -100vh;
 #impressum h1, 
 #impressum h2 {
     color: black;
+}
+#impressum h1 {
+    margin: 2rem 0 3rem 0; 
+}
+#impressum h2 {
+    font-size: 2.7rem; 
+    margin: 3rem 0 1.5rem 0; 
+}
+#impressum address {
+    font-style: normal;
+}
+#impressum a {
+    color: blue;
+}
+#impressum ul {
+    margin: 1rem 0;
+}
+#impressum li {
+    margin-left: 3rem;
+}
+/* ------------------ IMPRESSUM ------------------ */
+#titelbild11 {
+    width: 100%;
+    height: 50svh;
+    background-image: url(media/lastwagen-im-wald.JPG);
+    background-size: cover;
+    background-position: 40% 17%;
 }
 /*---------------------FOOTER---------------------*/
 footer {
