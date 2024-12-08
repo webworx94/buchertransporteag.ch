@@ -517,6 +517,7 @@ top: -100vh; left: -100vh;
 .link-box {
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 .inner-abholservice a {
     color: white;
@@ -537,7 +538,7 @@ top: -100vh; left: -100vh;
     font-weight: 800;
 }
 .abholservice-img {
-    max-width: 600px;
+    max-width: 900px;
 }
 .inner-abholservice img {
     width: 100%;
