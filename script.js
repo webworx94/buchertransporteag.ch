@@ -86,6 +86,34 @@ if (telInput) { // Prüfen, ob das Element existiert
     console.log("Kein Input-Feld für Telefonnummer auf dieser Seite vorhanden.");
 };
 
+// WEITERLEITUNG nach FORM ERFOLGREICH SENDEN
+function handleFormSubmit() {
+    // Prevents the default form submission
+    event.preventDefault(); 
+    
+    // Perform an AJAX request to the form action URL
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Redirect to the confirmation page
+            window.location.href = "../gesendet/"; 
+        } else {
+            alert("Es gab ein Problem beim Senden des Formulars. Bitte versuchen Sie es erneut.");
+        }
+    })
+    .catch(error => {
+        alert("Es gab ein Problem beim Senden des Formulars. Bitte versuchen Sie es erneut.");
+    });
+    
+    return false; // Prevent default form submission
+    }
+
 // GALLERIE
 document.addEventListener("DOMContentLoaded", () => {
     // Überprüfen, ob das Element #gallery vorhanden ist

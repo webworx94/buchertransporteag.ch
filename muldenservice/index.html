@@ -190,6 +190,7 @@
             <form action="https://web-worx.ch/formulare/bucher_process_form.php" method="post" class="contact-form" onsubmit="return handleFormSubmit()">
                 
                 <input type="hidden" name="form_id" value="190120241901">    
+                
                 <div class="form-row">
                     <label for="name">Name:<span> *</span></label>
                     <input type="text" id="name" name="name" required>
@@ -246,6 +247,8 @@
                     <label for="message">Nachricht:</label>
                     <textarea name="message" id="message" rows="5" cols="30"></textarea>
                 </div>
+
+                <input type="text" name="honeypot" id="honeypot" style="display:none;" autocomplete="off">
 
                 <div class="form-row2">
                     <input type="checkbox" id="data-consent" required>
