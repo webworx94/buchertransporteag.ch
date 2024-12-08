@@ -179,15 +179,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // check if an element is in viewport
     // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
     function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
+        var rect = el.getBoundingClientRect();
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+        return (
+          rect.top <= viewportHeight * 0.7 && // Element tritt später ein, bei 80% der Höhe
+          rect.bottom >= viewportHeight * 0.2 // Element bleibt sichtbar, solange mindestens 20% im Viewport sind
+        );
+      }
   
     function callbackFunc() {
       for (var i = 0; i < items.length; i++) {

@@ -252,6 +252,7 @@ h1 {
     font-size: 5rem;
     color: white;
     z-index: 3;
+    text-align: center;
 }
 h2 {
     color: white;
@@ -493,7 +494,7 @@ top: -100vh; left: -100vh;
 }
 
 &:checked ~ div {
-    max-height: 900px;
+    max-height: 1900px;
 }
 }
 #abholservice {
@@ -586,9 +587,8 @@ top: -100vh; left: -100vh;
     flex-direction: column;
 }
 .gallery-container {
-    max-width: 1500px;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
 }
 .gallery-grid {
     display: grid;
@@ -816,21 +816,17 @@ time {
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-@media screen and (max-width: 900px) {
-    .timeline ul li div {
-        width: 450px; /* Breite für mittlere Bildschirme */
-    }
-    .timeline ul li:nth-child(even) div {
-        left: -489px; /* Anpassung für 450px Breite */
-    }
-}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1400px) {
+    .timeline {
+        margin: 0 auto;
+    }
     .timeline ul li {
         margin-left: 20px;
     }
     .timeline ul li div {
-        width: calc(100vw - 91px); /* Dynamische Breite für kleinere Bildschirme */
+        width: calc(100vw - 100px); /* Dynamische Breite für kleinere Bildschirme */
+        max-width: 800px;
     }
     .timeline ul li:nth-child(even) div {
         left: 45px; /* Gleiche Position wie bei ungeraden Elementen */
@@ -912,6 +908,7 @@ time {
 #impressum h1, 
 #impressum h2 {
     color: black;
+    text-align: left;
 }
 #impressum h1 {
     margin: 2rem 0 3rem 0; 
@@ -1206,9 +1203,15 @@ footer h3 {
         text-align: center;
         font-weight: 600;
     }
+    .top-titels h2 {
+        text-align: left;
+    }
     .video-container {
         padding-bottom: 57.25%; /* 16:9 */
         max-width: 100%;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     .footer-spalten {
         flex-direction: column;
@@ -1269,6 +1272,12 @@ footer h3 {
     .strich-container {
         padding: 0 1rem;
     }
+    .gallery-grid {
+        display: block;
+    }
+    .gallery-item {
+        margin-bottom: 0.5rem;
+    }
     .low-footer {
         padding: 1rem 1rem;
     }
@@ -1322,6 +1331,12 @@ footer h3 {
     }
     .top-titels h2 {
         font-size: 2.8rem;
+    }
+    #impressum h2 {
+        font-size: 2rem; 
+    }
+    #impressum h3 {
+        font-size: 1.5rem;
     }
     .mulden-grid .item h3 {
         margin-bottom: 2rem;
