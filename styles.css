@@ -1111,6 +1111,9 @@ footer h3 {
         flex-direction: column;
         margin-top: 3rem;
     }
+    nav ul li {
+        text-align: center;
+    }
     .nav-btn {
         display: block;
     }
