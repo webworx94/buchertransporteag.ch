@@ -1358,6 +1358,9 @@ footer h3 {
     h2 {
         font-size: 1.2rem;
     }
+    .mulden-grid .item {
+        padding: 1rem;
+    }
     #impressum h2 {
         font-size: 2rem; 
     }
