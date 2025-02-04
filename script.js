@@ -54,7 +54,7 @@ dropStopBtn.addEventListener('click', () => {
 
 // Reset on Window Resize
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 1100) {
+    if (window.innerWidth > 1750) {
         // Reset header and menu buttons for large screens
         cancelBtn.style.display = 'none';
         menuBtn.style.display = 'none';

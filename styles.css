@@ -32,7 +32,7 @@ header {
     top: 0;
     left: 0;
     padding: 1.5rem 6rem;
-    background: rgba(3, 102, 229, 0.7);
+    background: #d1d6dc;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     z-index: 10;
@@ -56,19 +56,18 @@ nav ul li {
     font-weight: 500;
 }
 nav ul li a {
-    color: white;
+    color: #d40e1f;
     text-decoration: none;
     transition: 0.3s;
     padding: 2.5rem 0;
     cursor: pointer;
 }
 nav ul li a:hover {
-    color: gold;
     text-decoration: underline;
 }
 .active-link,
 .dropdown-nav li a.active-link {
-    color: gold;
+    text-decoration: underline;
 }
 .dropdown-toggle:hover .dropdown-nav {
     display: block;
@@ -78,8 +77,8 @@ nav ul li a:hover {
     position: absolute;
     top: 100%;
     right: 6rem;
-    border: 1px solid rgba(3, 102, 229, 1.0);
-    background-color: rgba(3, 102, 229, 0.7);
+    border: 1px solid #d1d6dc;
+    background-color: #c2c6c9;
     width: 200px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -96,10 +95,10 @@ nav ul li:hover .dropdown-nav {
     padding: 0rem 1rem;
 }
 .dropdown-nav li:hover {
-    background-color: rgba(0, 63, 146, 0.6);
+    background-color: #93979b;
 }
 .dropdown-nav li a {
-    color: white;
+    color: #d40e1f;
     text-decoration: none;
     display: block;
     padding: 1.3rem 0;
@@ -175,7 +174,7 @@ section:not(.hero-bild,
     text-decoration: none;
     font-size: 1.2rem;
     margin-top: 1rem;
-    color: var(--logo-blue2);
+    color: #d40e1f;
     transition: 0.5s ease-in-out;
 }
 .angebot a img {
@@ -1060,55 +1059,7 @@ footer h3 {
     margin: 1rem 0;
 }
 /* MEDIA QUERYS */
-@media (max-width: 1650px) {
-    header {
-        padding: 1.5rem 5rem;
-    }
-    .dropdown-nav {
-        right: 1rem;
-    }
-}
-@media (max-width: 1500px) {
-    header {
-        padding: 1.5rem 4rem;
-    }
-    .footer-spalten {
-        padding: 3rem 3rem 2rem 3rem;
-    }
-    .strich-container {
-        padding: 0 3rem;
-    }
-    .low-footer {
-        padding: 1rem 3rem;
-    }
-}
-@media (max-width: 1400px) {
-    .angebot-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-    }
-    .angebot {
-        max-width: 700px;
-    }
-    .image-container {
-        max-height: 525px;
-    }
-}
-@media (max-width: 1300px) {
-    nav ul {
-        gap: 3rem;
-    }
-}
-@media (max-width: 1200px) {
-    .rezensionen-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 4rem;
-    }
-}
-/* START MOBILE NAV */
-@media (max-width: 1100px) {
+@media (max-width: 1750px) {
     header {
         width: 100%;
         height: 100svh;
@@ -1163,8 +1114,8 @@ footer h3 {
     }
     .dropbtn {
         background-color: transparent;
-        border: 2px solid white;
-        color: white;
+        border: 2px solid #d40e1f;
+        color: #d40e1f;
         font-size: 1.2rem;
         font-weight: 700;
         padding: 0.02rem 0.1rem 0.1rem 0.1rem;
@@ -1200,11 +1151,61 @@ footer h3 {
     .dropdown-nav li:hover {
         background-color: transparent;
     }
+}
+@media (max-width: 1650px) {
+    header {
+        padding: 1.5rem 5rem;
+    }
+    .dropdown-nav {
+        right: 1rem;
+    }
+}
+@media (max-width: 1500px) {
+    header {
+        padding: 1.5rem 4rem;
+    }
+    .footer-spalten {
+        padding: 3rem 3rem 2rem 3rem;
+    }
+    .strich-container {
+        padding: 0 3rem;
+    }
+    .low-footer {
+        padding: 1rem 3rem;
+    }
+}
+@media (max-width: 1400px) {
+    .angebot-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+    .angebot {
+        max-width: 700px;
+    }
+    .image-container {
+        max-height: 525px;
+    }
     .mulden-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         padding-left: 0rem;
     }
+}
+@media (max-width: 1300px) {
+    nav ul {
+        gap: 3rem;
+    }
+}
+@media (max-width: 1200px) {
+    .rezensionen-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+}
+/* START MOBILE NAV */
+@media (max-width: 1100px) {
     .inner-abholservice {
         flex-direction: column;
         padding-top: 5rem;
@@ -1247,6 +1248,14 @@ footer h3 {
         text-align: center;
     }
 }
+@media (max-width: 900px) {
+    .mulden-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0;
+    }
+}
 @media (max-width: 800px) {
     .form-row {
         gap: 0.3rem;
@@ -1265,12 +1274,6 @@ footer h3 {
     }
     h2 {
         font-size: 1.5rem;
-    }
-    .mulden-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 3rem 0;
     }
 }
 @media (max-width: 650px) {
