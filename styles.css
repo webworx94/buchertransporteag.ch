@@ -5,7 +5,7 @@
 }
 body {
     font-family: Quicksand, sans-serif;
-    background-color: #ddf2ff;
+    background-color: #ffffff;
     font-size: 20px;
 }
 body p {
@@ -32,7 +32,7 @@ header {
     top: 0;
     left: 0;
     padding: 1.5rem 6rem;
-    background: #d1d6dc;
+    background: rgba(209, 214, 220, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     z-index: 10;
@@ -277,7 +277,8 @@ h2 {
 #titelbild3::before,
 #titelbild4::before,
 #titelbild5::before,
-#titelbild6::before {
+#titelbild6::before,
+#titelbild12::before {
     content: '';
     position: absolute;
     top: 0;
@@ -288,7 +289,7 @@ h2 {
     z-index: 2;
 }
 #top-titel {
-    background-color: rgba(3, 102, 229, 0.9);
+    background-color: rgba(209, 214, 220, 0.9);
 }
 .top-titels {
     max-width: 1500px;
@@ -298,11 +299,11 @@ h2 {
 }
 .top-titels h2 {
     font-size: 3.5rem;
-    text-shadow: 1px 2px 1px black;
+    color: #d40e1f;
 }
 .top-titels p {
     font-size: 1.4rem;
-    color: white;
+    color: black;
     margin-top: 1.7rem;
     max-width: 900px;
     line-height: 2.5rem;
@@ -356,14 +357,14 @@ th, td {
 /*FORM*/
 #anfrage {
     margin-top: 2rem;
-    background-color: rgba(3, 102, 229, 0.9);
+    background-color: rgba(209, 214, 220, 0.9); 
     padding: 2rem 0;
 }
 #anfrage h4 {
     text-align: center;
     font-size: 3rem;
     margin: 2rem 0;
-    color: white;
+    color: #d40e1f;
 }
 label span {
     color: red;
@@ -476,7 +477,7 @@ textarea {
     margin: 3rem 0;
 }
 .article-h2 {
-    color: #194B8A;
+    color: #d40e1f;
     font-size: 1.6rem;
     padding: 1rem 0;
     text-align: left;
@@ -485,7 +486,7 @@ textarea {
     cursor: pointer;
 }
 article {
-border: 2px solid #194B8A;
+border: 2px solid black;
 padding: 0 1rem;
 margin: 1em auto;
 transition: 0.3s;
@@ -512,7 +513,7 @@ top: -100vh; left: -100vh;
 }
 }
 #abholservice {
-    background-color: #194B8A;
+    background-color: rgba(209, 214, 220, 0.9);
 }
 .inner-abholservice {
     display: flex;
@@ -520,12 +521,13 @@ top: -100vh; left: -100vh;
     margin: 0 auto;
     align-items: center;
     gap: 8rem;
-    color: white;
+    color: black;
     width: 90%;
 }
 .inner-abholservice h3 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
+    color: #d40e1f;
 }
 .link-box {
     display: flex;
@@ -533,9 +535,9 @@ top: -100vh; left: -100vh;
     margin-bottom: 2rem;
 }
 .inner-abholservice a {
-    color: white;
+    color: black;
     text-decoration: none;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 3rem;
     display: flex;
     justify-content: center;
@@ -547,7 +549,6 @@ top: -100vh; left: -100vh;
 }
 .inner-abholservice a:hover {
     background: white;
-    color:  #194B8A;
     font-weight: 800;
 }
 .abholservice-img {
@@ -725,15 +726,18 @@ top: -100vh; left: -100vh;
 .timeline ul {
     padding: 50px 0;
 }
-
+.timeline .kleiner time {
+    color: #d40e1f;
+    font-size: 1.4rem;
+}
 .timeline ul li {
     list-style-type: none;
     position: relative;
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
-    background: rgba(3, 102, 229, 0.9);
-    color: white;
+    background: #d40e1f;
+    color: black;
 }
 
 .timeline ul li::after {
@@ -754,7 +758,7 @@ top: -100vh; left: -100vh;
     bottom: 0;
     width: 600px; /* Breite angepasst */
     padding: 15px;
-    background: rgba(3, 102, 229, 0.9);
+    background: rgba(209, 214, 220, 0.9);
 }
 
 .timeline ul li div img {
@@ -780,7 +784,7 @@ top: -100vh; left: -100vh;
 .timeline ul li:nth-child(odd) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent #000000 transparent transparent;
+    border-color: transparent #d40e1f transparent transparent;
 }
 
 .timeline ul li:nth-child(even) div {
@@ -790,7 +794,7 @@ top: -100vh; left: -100vh;
 .timeline ul li:nth-child(even) div::before {
     right: -15px;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent #000000;
+    border-color: transparent transparent transparent #d40e1f;
 }
 
 time {
@@ -808,7 +812,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-    background: #000000;
+    background: #d40e1f;
 }
 
 .timeline ul li div {
@@ -925,7 +929,7 @@ time {
 }
 #impressum h1, 
 #impressum h2 {
-    color: black;
+    color: #d40e1f;
     text-align: left;
 }
 #impressum h1 {
@@ -936,6 +940,7 @@ time {
     margin: 3rem 0 1.5rem 0; 
 }
 #impressum h3 {
+    color: #d40e1f;
     font-size: 1.8rem;
     margin: 2rem 0 0.5rem 0;
 }
@@ -951,13 +956,28 @@ time {
 #impressum li {
     margin-left: 3rem;
 }
-/* ------------------ IMPRESSUM ------------------ */
+/* ------------------ DATENSCHUTZ ------------------ */
 #titelbild11 {
     width: 100%;
     height: 50svh;
     background-image: url(media/lastwagen-im-wald.webp);
     background-size: cover;
     background-position: 40% 17%;
+}
+/* ------------------ WINTERDIENST ------------------ */
+#titelbild12 {
+    position: relative;
+    width: 100%;
+    height: 70svh;
+    min-height: 600px;
+    background: url(media/Schneeraeumung.jpg);
+    background-size: cover;
+    background-position: 60% 40%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 /*---------------------FOOTER---------------------*/
 footer {
@@ -1073,7 +1093,7 @@ footer h3 {
     }
     nav {
         flex-direction: column;
-        margin-top: 6rem;
+        margin-top: 2rem;
     }
     nav ul {
         flex-direction: column;
@@ -1092,7 +1112,7 @@ footer h3 {
         right: 1rem;
         z-index: 10;
         cursor: pointer;
-        background: rgba(252, 153, 26, 0.7);
+        background: rgba(43, 241, 224, 0.7);
     }
     #menu-btn {
         filter: invert(100%);
@@ -1108,9 +1128,6 @@ footer h3 {
     }
     .firstdrop {
         display: none;
-    }
-    nav ul li:nth-of-type(4) {
-        transform: translateY(-15px);
     }
     .dropbtn {
         background-color: transparent;
