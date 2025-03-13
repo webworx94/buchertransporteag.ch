@@ -1214,11 +1214,6 @@ footer h3 {
         padding-left: 0rem;
     }
 }
-@media (max-width: 1300px) {
-    nav ul {
-        gap: 3rem;
-    }
-}
 @media (max-width: 1200px) {
     .rezensionen-container {
         flex-direction: column;
