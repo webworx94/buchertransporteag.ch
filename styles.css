@@ -450,6 +450,19 @@ textarea {
     font-size: 2rem;
     padding-top: 5rem;
 }
+/* IMPORTANT INPUTS ;) */
+#user_address, 
+#confirm_email {
+  visibility: hidden;
+  position: absolute;
+}
+#company_name,
+#feedback_notes,
+#referral_code {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
 /* ------------------ SAMMELSTELLE ------------------ */
 #titelbild3 {
     position: relative;
