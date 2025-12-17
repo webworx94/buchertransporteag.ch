@@ -462,6 +462,8 @@
                         <a href="../datenschutz/" class="privacy-link" target="_blank">Datenschutz</a> einverstanden.<span> *</span>
                     </label>
                 </div>
+
+                <div class="g-recaptcha" data-sitekey="6LccUS4sAAAAAEPNbdE7d7qb12Z1TagcZrzkHQ15"></div>
                 
                 <input type="submit">
             </form>
@@ -584,5 +586,14 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            if (grecaptcha.getResponse().length === 0) {
+                event.preventDefault();
+                alert('⚠️ Bitte bestätigen Sie, dass Sie kein Roboter sind.');
+            }
+        });
+    </script>
 </body>
 </html>
