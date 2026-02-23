@@ -525,6 +525,49 @@ top: -100vh; left: -100vh;
     max-height: 1900px;
 }
 }
+
+#entsorgung .entsorgungs-h2 {
+    color: black !important;
+    font-size: 3rem;
+}
+#entsorgung {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.entsorgung-text {
+    flex: 3;
+}
+
+.entsorgung-bild {
+    flex: 2;
+}
+
+.entsorgung-bild img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#entsorgung-bild img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    #entsorgung {
+        flex-direction: column;
+    }
+
+    .entsorgung-text,
+    .entsorgung-bild {
+        flex: unset;      /* Flex-Werte zurücksetzen */
+        width: 100%;      /* volle Breite */
+    }
+}
+
 #abholservice {
     background-color: rgba(209, 214, 220, 0.9);
 }
